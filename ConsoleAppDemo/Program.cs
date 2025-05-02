@@ -66,10 +66,10 @@
             System.Console.WriteLine(10 % 3);//Arithmetic ->+,-,*,/,%    //1
             System.Console.WriteLine(y += 3);//assignment operator(+=,-=,/=,*=,%=,=) //6
             System.Console.WriteLine(++x);//pre/post inc/dec //11
-            System.Console.WriteLine(56 > 87);//comparison operator->>,>=,<.<=,==   //false
+            System.Console.WriteLine(56 > 87);//comparison operator(returns boolean only)  >,>=,<.<=,==   //false
             System.Console.WriteLine(8 > 7 & 18 < 6);//logical operator(&,|) -checks both //false
-            System.Console.WriteLine(8 > 7 || 18 > 6);//conditional operator(&&,||) -checks both //true
-            System.Console.WriteLine(5 > 7 ^ 8 > 1);//xor -any 1 needs to be true to return true //true
+            System.Console.WriteLine(8 > 7 || 18 > 6);//conditional operator(&&,||) -checks smartly,not always both //true
+            System.Console.WriteLine(5 > 7 ^ 8 > 1);//XOR -any 1 needs to be true to return true //true
             System.Console.WriteLine(!(5 > 7));//negation operator //true
             System.Console.WriteLine("Number" + 234);//Number234  //concatenation operator
             System.Console.WriteLine("Number" + "String");//NumberString

@@ -78,8 +78,11 @@
             System.Console.WriteLine(age < 13 ? "child" : (age > 13 && age < 18 ? "teenager" : "adult"));
 
             System.Console.WriteLine("Area of circle->" + AreaOfCircle(2));//12.56636
-            System.Console.WriteLine("FeetInches to Cm" + FeetToCentimetres(5, 7));//170.18cm
-    
+            System.Console.WriteLine("FeetInches to Cm" + FeetToCentimetres(5, 7));//170.18cm  
+            NearestThsnd(999);
+            NearestThsnd(1000);
+            NearestThsnd(1499);
+            NearestThsnd(1500);
         }
         /// <summary>
         /// Area of circle
@@ -88,8 +91,8 @@
         /// <returns></returns>
         public static double AreaOfCircle(int radius)
         {
-            double PI = 3.14159;
-            return PI * radius * radius;
+            //const double PI = 3.14159;
+            return Math.PI * radius * radius;
         }
 
         /// <summary>
@@ -103,6 +106,30 @@
             return ((feet * 12) + inches) * 2.54;
         }
 
-       
+
+        public static  void NearestThsnd(int number)
+        {
+            //If the number's last three digits are greater than or equal to 500; it should "round up" the number.
+            //If the number's last three digits are less than 500; it should "round down" the number.
+            //If the number is less than 500; it should round up to 1000.
+            decimal decimalNumber = number;
+
+            int previousThousand = number / 1000 * 1000;//3000
+
+            decimal x = decimalNumber / 1000; // 3.852
+            decimal y = number / 1000;        // 3
+
+            decimal lastThreeDigits = (x - y) * 1000; // 852
+
+            int roundingValue = (lastThreeDigits >= 500) ? 1000 : 0;
+            int roundIfSmall = (number < 500) ? 1000 : 0;
+
+            int nearestThousand = previousThousand + roundingValue + roundIfSmall;//3000 + 1000 + 0 = 4000
+
+            Console.WriteLine(nearestThousand); // Output: 4000
+            Console.ReadKey();
+
+        }
+
     }
 }

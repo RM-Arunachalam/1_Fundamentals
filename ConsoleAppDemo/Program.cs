@@ -56,6 +56,7 @@
 
             //to find default value
             System.Console.WriteLine(default(string));//null
+            //null- no memory allocated, empty- empty string, blank(can be spaces)
 
             byte b = 32;//here 32 is treated as integer(default integral datatype)
             System.Console.WriteLine(b);
@@ -66,6 +67,8 @@
             System.Console.WriteLine(10 % 3);//Arithmetic ->+,-,*,/,%    //1
             System.Console.WriteLine(y += 3);//assignment operator(+=,-=,/=,*=,%=,=) //6
             System.Console.WriteLine(++x);//pre/post inc/dec //11
+            System.Console.WriteLine(x++);//pre/post inc/dec //11
+            System.Console.WriteLine(x);//12
             System.Console.WriteLine(56 > 87);//comparison operator(returns boolean only)  >,>=,<.<=,==   //false
             System.Console.WriteLine(8 > 7 & 18 < 6);//logical operator(&,|) -checks both //false
             System.Console.WriteLine(8 > 7 || 18 > 6);//conditional operator(&&,||) -checks smartly,not always both //true

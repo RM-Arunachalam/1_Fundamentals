@@ -26,7 +26,7 @@
             System.Console.WriteLine("short.MaxValue->" + short.MaxValue);
             System.Console.WriteLine("ushort.MinValue->" + ushort.MinValue);
             System.Console.WriteLine("ushort.MaxValue->" + ushort.MaxValue);
-            System.Console.WriteLine("int.MinValue->" + int.MinValue);//default intergal literal value is of int datatype
+            System.Console.WriteLine("int.MinValue->" + int.MinValue);//default integral literal value is of int datatype
             System.Console.WriteLine("int.MaxValue->" + int.MaxValue);
             System.Console.WriteLine("uint.MinValue->" + uint.MinValue);
             System.Console.WriteLine("uint.MaxValue->" + uint.MaxValue);
@@ -48,7 +48,8 @@
             System.Console.WriteLine(floatVal + " " + doubleVal + " " + decimalVal);
 
             char charValue = 'a';
-            System.Console.WriteLine(charValue);//default ->\0(null)
+            System.Console.WriteLine(charValue);
+            System.Console.WriteLine("default char value is=>"+default(char));//default ->\0(null)
 
             bool switchvalue = false;//1 bit (default-false)
             System.Console.WriteLine(switchvalue);

@@ -84,7 +84,7 @@ class Sample
                 break;
         }
 
-        //while loop
+        //while loop [reading from file/db]
         System.Console.WriteLine("while loop");
         int num = 1;
         while (num < 5)
@@ -93,6 +93,7 @@ class Sample
             num++;
         }
 
+        //do while loop[reading from file/db]
         System.Console.WriteLine("do while loop");
         //do while //executes ones irrespective of loop condition
         int num2 = 1;
@@ -102,7 +103,7 @@ class Sample
             num2++;
         } while (num2 < 3);
 
-        //for loop
+        //for loop [if values are known and fixed]
         System.Console.WriteLine("for loop");
         for (int i = 0; i < 5; i++)//i-block level variable
         {

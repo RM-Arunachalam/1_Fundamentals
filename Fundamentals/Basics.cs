@@ -2,9 +2,9 @@
 {
     public class Student
     {
-        private int rollNo { get; set; }
+        private int rollNo { get; set; } //fields
 
-        public void setRollNo(int rollNo)
+        public void setRollNo(int rollNo)//methods
         {
             this.rollNo = rollNo;
         }

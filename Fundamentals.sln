@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecToMin", "SecToMin\SecToM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlStatementsDemo", "ControlStatementsDemo\ControlStatementsDemo.csproj", "{9B984A78-EBB9-4318-9DD8-5FC830B5F548}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOCExplained", "IOCExplained\IOCExplained.csproj", "{DD836AF0-3D2F-4230-99FA-F3BC5A0E2EA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9B984A78-EBB9-4318-9DD8-5FC830B5F548}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B984A78-EBB9-4318-9DD8-5FC830B5F548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B984A78-EBB9-4318-9DD8-5FC830B5F548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD836AF0-3D2F-4230-99FA-F3BC5A0E2EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD836AF0-3D2F-4230-99FA-F3BC5A0E2EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD836AF0-3D2F-4230-99FA-F3BC5A0E2EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD836AF0-3D2F-4230-99FA-F3BC5A0E2EA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

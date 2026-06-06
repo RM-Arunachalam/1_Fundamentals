@@ -2,9 +2,10 @@
 {
     public class Student
     {
-        private int rollNo { get; set; } //fields
+        private int rollNo { get; set; } //fields- to store data
 
-        public void setRollNo(int rollNo)//methods
+        //methods- to manipulate data  inside  the fields
+        public void setRollNo(int rollNo)
         {
             this.rollNo = rollNo;
         }
@@ -18,12 +19,12 @@
     {
         public static void Main(string[] args)
         {
-            int x = 10;//local variable
-            System.Console.WriteLine(x);//10
+            int x = 1;//local variable
+            System.Console.WriteLine(x);//1
 
             Student Arun = new Student();//object creation
-            Arun.setRollNo(15);
-            System.Console.WriteLine(Arun.getRollNo());//15
+            Arun.setRollNo(150);
+            System.Console.WriteLine(Arun.getRollNo());//150
         }
     }
 }

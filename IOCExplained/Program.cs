@@ -5,7 +5,7 @@ public class Program
     public static void Main()
     {
         // Demonstrating Inversion of Control (IoC)  [inverted object creation control from checkout constructor, here flexibility to pass any of its child class objects]
-        PaymentProcessor paymentProcessor = new upi();
+        IPaymentProcessor paymentProcessor = new upi();
 
         // This is the core of IoC, where the dependency is injected into the Checkout class=>DI
         // Inversion of Control (IoC) allows us to change the payment method without modifying the Checkout class.(u can inject any child class object of PaymentProcessor interface)

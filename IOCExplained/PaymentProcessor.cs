@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IOCExplained
+﻿namespace IOCExplained
 {
-    public interface PaymentProcessor
+    public interface IPaymentProcessor
     {
         public void ProcessPayment(int amount);
     }
 
-    public class upi : PaymentProcessor
+    public class upi : IPaymentProcessor
     {
         public void ProcessPayment(int amount)
         {
             Console.WriteLine("Payment of " + amount + " processed through UPI.");
         }
     }
-    public class CreditCard : PaymentProcessor
+    public class CreditCard : IPaymentProcessor
     {
         public void ProcessPayment(int amount)
         {
             Console.WriteLine("Payment of " + amount + " processed through Credit Card.");
         }
     }
-    public class DebitCard : PaymentProcessor
+    public class DebitCard : IPaymentProcessor
     {
         public void ProcessPayment(int amount)
         {
@@ -36,10 +30,10 @@ namespace IOCExplained
     //Checkout uses abstraction properly — it only knows what it needs to know (the contract/interface), and ignores how the work is actually done.
     public class Checkout
     {
-        private PaymentProcessor _paymentProcessor;
+        private IPaymentProcessor _paymentProcessor;
 
         //Dependency Injection
-        public Checkout(PaymentProcessor paymentProcessor)
+        public Checkout(IPaymentProcessor paymentProcessor)
         {
             _paymentProcessor = paymentProcessor;
         }

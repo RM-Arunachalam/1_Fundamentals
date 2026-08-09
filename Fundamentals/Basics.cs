@@ -23,8 +23,12 @@
             System.Console.WriteLine(x);//1
 
             Student Arun = new Student();//object creation
-            Arun.setRollNo(150);
-            System.Console.WriteLine(Arun.getRollNo());//150
+            Arun.setRollNo(101);
+            System.Console.WriteLine(Arun.getRollNo());//101
+
+            Student hari = new Student();
+            hari.setRollNo(102);
+            System.Console.WriteLine(hari.getRollNo());//102
         }
     }
 }

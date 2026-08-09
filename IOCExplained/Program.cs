@@ -1,13 +1,17 @@
 ﻿using IOCExplained;
-
+//Main() decides which impl (IoC) → places it in Checkout (DI)
+//Checkout calls the interface (Abstraction) → right impl runs (Runtime Polymorphism)
 public class Program
 {
+    //Without IoC: Checkout is both the decision maker(which payment method object to create inside checkout object) and the worker.(make payment)
+    //With IoC: Main() is the decision maker, Checkout is purely the worker.
     public static void Main()
     {
         // Demonstrating Inversion of Control (IoC)  [inverted object creation control from checkout constructor, here flexibility to pass any of its child class objects]
-        IPaymentProcessor paymentProcessor = new upi();
+        IPaymentProcessor paymentProcessor = new upi(); //injected  object
 
-        // This is the core of IoC, where the dependency is injected into the Checkout class=>DI
+        // This is the core of IoC, where the dependency is injected into the Checkout class=>IPaymentProcessor[Dependency]
+
         // Inversion of Control (IoC) allows us to change the payment method without modifying the Checkout class.(u can inject any child class object of PaymentProcessor interface)
         Checkout c =new Checkout(paymentProcessor);// Via DI
         c.MakePayment(1000);   //Calls UPI Class.ProcessPayment() [Runtime Polymorphism]

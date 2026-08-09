@@ -35,12 +35,13 @@
         //Dependency Injection
         public Checkout(IPaymentProcessor paymentProcessor)
         {
+            //_paymentProcessor = new UPI();  // hardcoded inside![No IoC]
             _paymentProcessor = paymentProcessor;
         }
 
         public void MakePayment(int amt)
         {
-            //in our case the the method in checkout class just calls the interface method,no need to worry on method implementation
+            //in our case the method in checkout class just calls the interface method,no need to worry on method implementation
             //abstraction is used here, we are not concerned with how the payment is processed, just that it is processed
             _paymentProcessor.ProcessPayment(amt);
         }

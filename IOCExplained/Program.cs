@@ -3,7 +3,7 @@
 //Checkout calls the interface (Abstraction) → right impl runs (Runtime Polymorphism)
 public class Program
 {
-    //Without IoC: Checkout is both the decision maker(which payment method object to create inside checkout object) and the worker.(make payment)
+    //Without IoC: Checkout is both the decision maker(which payment method object to create inside checkout constructor) and the worker.(make payment)
     //With IoC: Main() is the decision maker, Checkout is purely the worker.
     public static void Main()
     {
@@ -19,12 +19,12 @@ public class Program
         paymentProcessor = new CreditCard();  //IOC
         // Here we are injecting a different payment method (Credit Card) without changing the Checkout class
         c = new Checkout(paymentProcessor);
-        c.MakePayment(2000); 
+        c.MakePayment(1500); 
 
         paymentProcessor = new DebitCard(); //IOC
         // Here we are injecting a different payment method (Debit Card) without changing the Checkout class
         c = new Checkout(paymentProcessor);
-        c.MakePayment(1500);
+        c.MakePayment(2000);
 
     }
 }

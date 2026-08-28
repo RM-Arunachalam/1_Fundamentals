@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//Path to choose ->*\\iLCodeDemo\bin\Debug\ .exe file
+﻿//Path to choose ->*\\iLCodeDemo\bin\Debug\ .exe file
 namespace iLCodeDemo
 {
     public  class Multiply

@@ -5,6 +5,7 @@
         seconds(288970);//3days,8 hours, 16 minutes,10 seconds
         seconds(987654);//11days,10 hours, 20 minutes,54 seconds
         seconds(7676);//0days,2 hours, 7 minutes,56 seconds
+        seconds(62);//0days,0 hours, 1 minutes,2 seconds
     }
     /// <summary>
     ///  seconds = 288970 [The given number of seconds is equivalent to "3 days, 8 hours, 16 minutes, 10 seconds"]

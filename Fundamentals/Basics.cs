@@ -2,7 +2,7 @@
 {
     public class Student
     {
-        private int rollNo { get; set; } //fields- to store data
+        private int rollNo;//fields- to store data
 
         //methods- to manipulate data  inside  the fields
         public void setRollNo(int rollNo)

@@ -2,10 +2,11 @@
 {
     public interface IPaymentProcessor
     {
+        //interface contains only abstract methods, no implementation
         public void ProcessPayment(int amount);
     }
 
-    public class upi : IPaymentProcessor
+    public class UPI : IPaymentProcessor
     {
         public void ProcessPayment(int amount)
         {

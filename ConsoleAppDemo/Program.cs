@@ -4,6 +4,7 @@
     {
         public static void Main(string[] args)
         {
+
             System.Console.Write("hello ");//console class[static class]-all members are accessible without creating object
             System.Console.WriteLine();//printing empty line
             System.Console.WriteLine("Enter a number");
@@ -12,8 +13,10 @@
             System.Console.ReadKey();//waits for user to press some key
             System.Console.Clear();
 
-            int number_stored = 10;//local variable-short lives
+            int number_stored = 10;//local variable-(short lives)
             System.Console.WriteLine(number_stored);
+            //   int a;
+            //System.Console.WriteLine(a); //CE error
             string name = "Arun"; //string literal-collection of unicode characters[empty/null]
             System.Console.WriteLine("Name stored is " + name);
 
@@ -42,24 +45,28 @@
             System.Console.WriteLine("decimal.MinValue->" + decimal.MinValue);
             System.Console.WriteLine("decimal.MaxValue->" + decimal.MaxValue);
 
+            //default value->0 for floating point literal
             float floatVal = 3.14f;
-            double doubleVal = 67.89;//by default,floating point literal are of double datatype
+            double doubleVal = 67.89;//by default,floating point literal are of double datatype[D is optional]
             decimal decimalVal = 342.76M;
-            System.Console.WriteLine(floatVal + " " + doubleVal + " " + decimalVal);
+            System.Console.WriteLine(floatVal + "  " + doubleVal + "  " + decimalVal);
 
             char charValue = 'a';
             System.Console.WriteLine(charValue);
-            System.Console.WriteLine("default char value is=>"+default(char));//default ->\0(null)
+            System.Console.WriteLine("default char value is=>" + default(char) + "end");//default ->\0
 
             bool switchvalue = false;//1 bit (default-false)
             System.Console.WriteLine(switchvalue);
 
             //to find default value
             System.Console.WriteLine(default(string));//null
-            //null- no memory allocated, empty- empty string, blank(can be spaces)
+            System.Console.WriteLine(default(double));//0
+                                                      //null- no memory allocated, empty- empty string(obj created here but no value), might have few spaces
 
             byte b = 32;//here 32 is treated as integer(default integral datatype)
             System.Console.WriteLine(b);
+
+
 
             //operators
             int x = 10;
@@ -70,22 +77,30 @@
             System.Console.WriteLine(x++);//pre/post inc/dec //11
             System.Console.WriteLine(x);//12
             System.Console.WriteLine(56 > 87);//comparison operator(returns boolean only)  >,>=,<.<=,==   //false
-            System.Console.WriteLine(8 > 7 & 18 < 6);//logical operator(&,|) -checks both //false
-            System.Console.WriteLine(8 > 7 || 18 > 6);//conditional operator(&&,||) -checks smartly,not always both //true
+            System.Console.WriteLine(8 > 17 & 18 < 6);//logical operator(&,|) -checks both //false
+            System.Console.WriteLine(8 > 7 || 18 > 6);//conditional operator(&&,||) -checks smartly,not  both //true
             System.Console.WriteLine(5 > 7 ^ 8 > 1);//XOR -any 1 needs to be true to return true //true
             System.Console.WriteLine(!(5 > 7));//negation operator //true
             System.Console.WriteLine("Number" + 234);//Number234  //concatenation operator
             System.Console.WriteLine("Number" + "String");//NumberString
             System.Console.WriteLine(10 > 6 ? "10 is greater than 6" : "10 is not greater than 6");//ternary conditional operator//10 is greater than 6
-            int age = 18;
-            System.Console.WriteLine(age < 13 ? "child" : (age > 13 && age < 18 ? "teenager" : "adult"));
+            int age = 16;
+            System.Console.WriteLine(age < 13 ? "child" : (age > 13 && age < 18 ? "teenager" : "adult"));//Teenager
+
+
+            //operator precedence
+            double z = 10 + 4 * 30 / 10;
+            System.Console.WriteLine(z);//22
 
             System.Console.WriteLine("Area of circle->" + AreaOfCircle(2));//12.56636
-            System.Console.WriteLine("FeetInches to Cm" + FeetToCentimetres(5, 7));//170.18cm  
-            NearestThsnd(999);
-            NearestThsnd(1000);
-            NearestThsnd(1499);
-            NearestThsnd(1500);
+            System.Console.WriteLine("FeetInches to Cm-->" + FeetToCentimetres(5, 7));//170.18cm  
+            NearestThousand(999);//1000
+            NearestThousand(1000);//1000
+            NearestThousand(1499);//1000
+            NearestThousand(1500);//2000
+            NearestThousand(3867);//4000
+            NearestThousand(38067);//38000
+
         }
         /// <summary>
         /// Area of circle
@@ -109,29 +124,24 @@
             return ((feet * 12) + inches) * 2.54;
         }
 
-
-        public static  void NearestThsnd(int number)
+        //If the number's last three digits are greater than or equal to 500; it should "round up" the number.
+        //If the number's last three digits are less than 500; it should "round down" the number.
+        //If the number is less than 500; it should round up to 1000.
+        public static void NearestThousand(int num)
         {
-            //If the number's last three digits are greater than or equal to 500; it should "round up" the number.
-            //If the number's last three digits are less than 500; it should "round down" the number.
-            //If the number is less than 500; it should round up to 1000.
-            decimal decimalNumber = number;
+            decimal decNum = num;//assigning to decimal to get fractional value 
+            int Prevthous = num / 1000 * 1000;  //3867/1000*1000----> 3*1000 // 3 result is int here
 
-            int previousThousand = number / 1000 * 1000;//3000
+            decimal x = decNum / 1000; //3.867 is decimal here
+            decimal y = Prevthous / 1000;//3 is decimal here
 
-            decimal x = decimalNumber / 1000; // 3.852
-            decimal y = number / 1000;        // 3
+            decimal last3digits = (x - y) * 1000; //0.867 is decimal here  
 
-            decimal lastThreeDigits = (x - y) * 1000; // 852
+            int roundingValueifGreaterorEqual500 = (last3digits >= 500) ? 1000 : 0;//rounding up to 1000,else round down the number (3000 in this case)
 
-            int roundingValue = (lastThreeDigits >= 500) ? 1000 : 0;
-            int roundIfSmall = (number < 500) ? 1000 : 0;
+            int ifNumlessThan500 = (num < 500) ? 1000 : 0;
 
-            int nearestThousand = previousThousand + roundingValue + roundIfSmall;//3000 + 1000 + 0 = 4000
-
-            Console.WriteLine(nearestThousand); // Output: 4000
-            Console.ReadKey();
-
+            System.Console.WriteLine(roundingValueifGreaterorEqual500 + ifNumlessThan500 + Prevthous);
         }
 
     }

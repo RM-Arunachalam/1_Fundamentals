@@ -3,6 +3,7 @@ class Sample
 {
     public static void Main(string[] args)
     {
+     
         //control statements
         //conditional control statements-if,else,else if,nested if,switch
         //looping control statements-do while,while,for
@@ -23,149 +24,152 @@ class Sample
         {
             System.Console.WriteLine("your age is greater than or equal to  18");
         }
+        
+             //else if
+             if (age < 18)
+             {
+                 System.Console.WriteLine("your age is less than 18");
+             }
+             else if (age == 18)
+             {
+                 System.Console.WriteLine("Age is exactly 18");
+             }
+             else
+             {
+                 System.Console.WriteLine("your age is greater than 18");
+             }
 
-        //else if
-        if (age < 18)
-        {
-            System.Console.WriteLine("your age is less than 18");
-        }
-        else if (age == 18)
-        {
-            System.Console.WriteLine("Age is exactly 18");
-        }
-        else
-        {
-            System.Console.WriteLine("your age is greater than 18");
-        }
+             //nested if
+             if (age >= 18)//outer if
+             {
+                 if (age == 18)//inner if
+                 {
+                     System.Console.WriteLine("your age is exactly 18");
+                 }
+                 else
+                 {
+                     System.Console.WriteLine("your age is greater than 18");
+                 }
+             }
+             else
+             {
+                 System.Console.WriteLine("your age is less than 18");
+             }
+           
+             int weekNum = 6;
+             switch (weekNum)//int,char,enum are supported datatypes
+             {
+                 case 0:
+                     System.Console.WriteLine("Sunday");
+                     break;
+                 case 1:
+                     System.Console.WriteLine("Monday");
+                     break;
+                 case 2:
+                     System.Console.WriteLine("Tuesday");
+                     break;
+                 case 3:
+                     System.Console.WriteLine("Wendnesday");
+                     break;
+                 case 4:
+                     System.Console.WriteLine("Thursday");
+                     break;
+                 case 5:
+                     System.Console.WriteLine("Friday");
+                     break;
+                 case 6:
+                     System.Console.WriteLine("Saturday");
+                     break;
+                 default://optional to write
+                     System.Console.WriteLine("entered value is wrong");
+                     break;
+             }
+        
+           //while loop [reading from file/db]
+           System.Console.WriteLine("while loop");
+           int num = 1; //initialization
+           while (num < 5) //condition
+           {
+               System.Console.WriteLine(num);
+               num++; //inc/dec
+           }
 
-        //nested if
-        if (age >= 18)//outer if
-        {
-            if (age == 18)//inner if
-            {
-                System.Console.WriteLine("your age is exactly 18");
-            }
-            else
-            {
-                System.Console.WriteLine("your age is greater than 18");
-            }
-        }
-        else
-        {
-            System.Console.WriteLine("your age is less than 18");
-        }
-
-        int weekNum = 6;
-        switch (weekNum)//int,char,enum are supported datatypes
-        {
-            case 0:
-                System.Console.WriteLine("Sunday");
-                break;
-            case 1:
-                System.Console.WriteLine("Monday");
-                break;
-            case 2:
-                System.Console.WriteLine("Tuesday");
-                break;
-            case 3:
-                System.Console.WriteLine("Wendnesday");
-                break;
-            case 4:
-                System.Console.WriteLine("Thursday");
-                break;
-            case 5:
-                System.Console.WriteLine("Friday");
-                break;
-            case 6:
-                System.Console.WriteLine("Saturday");
-                break;
-            default://optional to write
-                System.Console.WriteLine("entered value is wrong");
-                break;
-        }
-
-        //while loop [reading from file/db]
-        System.Console.WriteLine("while loop");
-        int num = 1;
-        while (num < 5)
-        {
-            System.Console.WriteLine(num);
-            num++;
-        }
-
-        //do while loop[reading from file/db]
-        System.Console.WriteLine("do while loop");
-        //do while //executes ones irrespective of loop condition
-        int num2 = 1;
+           //do while loop[reading from file/db]
+           System.Console.WriteLine("do while loop");
+           //do while //executes once irrespective of loop condition
+           int num2 = 19; //initialization
         do
-        {
-            System.Console.WriteLine(num2);
-            num2++;
-        } while (num2 < 3);
+           {
+               System.Console.WriteLine(num2);
+               num2++;//inc/dec
+        } while (num2 < 3);//condition
 
         //for loop [if values are known and fixed]
         System.Console.WriteLine("for loop");
-        for (int i = 0; i < 5; i++)//i-block level variable
+           for (int i = 0; i < 5; i++)//i-block level variable  //all in one line(initialization,condition,inc/dec)
         {
-            System.Console.WriteLine(i);
-        }
-
-        //break -stops the loop
-        System.Console.WriteLine("break");
-        for (int i = 0; i < 10; i++)
-        {
-            if (i == 5)
-            {
-                break;
+               System.Console.WriteLine(i);
+           }
+        
+           //break -stops the loop
+           System.Console.WriteLine("break");
+           for (int i = 0; i < 4; i++)
+           {
+               if (i == 2)
+               {
+                   break; //recommended to use inside if block
             }
-            System.Console.WriteLine(i);
-        }
+               System.Console.WriteLine(i);
+           }
 
-        //continue-skips the particular iteration
-        System.Console.WriteLine("continue");
-        for (int i = 0; i < 10; i++)
-        {
-            if (i == 5)
-            {
-                continue;
+           //continue-skips the particular iteration
+           System.Console.WriteLine("continue");
+           for (int i = 0; i < 4; i++)
+           {
+               if (i == 2)
+               {
+                   continue; //recommended to use inside if block
             }
-            System.Console.WriteLine(i);
-        }
+               System.Console.WriteLine(i);
+           }
+      
+     //Nested For loop
+     System.Console.WriteLine("Nested For loop");
+     for (int i = 1; i <= 2; i++)
+     {
+         for (int j = 1; j <= i; j++)
+         {
+             System.Console.WriteLine(i + "  " + j);
+         }
+     }
 
-        //Nested For loop
-        System.Console.WriteLine("Nested For loop");
-        for (int i = 1; i <= 5; i++)
-        {
-            for (int j = 1; j <= i; j++)
-            {
-                System.Console.WriteLine(i + " " + j);
-            }
-        }
-
-        //goto
-        System.Console.WriteLine("goto ");
-        int p = 1;
-        System.Console.WriteLine("label print");
-        labelcode:
-        System.Console.WriteLine(p);
-        if (p < 3)
-        {
-            p++;
-            goto labelcode;
-        }
-
-        GetHeightCategory(75);//Tall
-        GetHeightCategory(45); //Dwarf
+     //goto
+     System.Console.WriteLine("goto ");
+     int p = 1;
+     System.Console.WriteLine("label print");
+     labelcode:
+     System.Console.WriteLine(p);
+     if (p < 3)
+     {
+         p++;
+         goto labelcode;
+     }
+        System.Console.WriteLine("end ");
+     
+      GetHeightCategory(75);//Tall
+      GetHeightCategory(45); //Dwarf
         FindLargest(10, 56, 7);//56 is greatest
-        FindLargest(100, 100, 7);//100 is greatest
-        FindLargest(10, 700, 700);//700 is greatest
-        patternPrinting();
+        FindLargest(101, 100, 7);//101 is greatest
+        FindLargest(10, 70, 700);//700 is greatest
+        FindLargest(10, 10, 10);//10 is greatest
+          patternPrinting();
     }
 
     public static void GetHeightCategory(int inches)
 
     {
-        double height = inches * 2.54;
+        double InchesToCm = inches * 2.54;
+        double height = InchesToCm;
         if (height < 150)
         {
             System.Console.WriteLine("Dwarf");
@@ -199,7 +203,7 @@ class Sample
             if (b >= c)
                 System.Console.WriteLine(b + " is greatest");
             else
-                System.Console.WriteLine(c + "is greatest");
+                System.Console.WriteLine(c + " is greatest");
         }
 
     }
@@ -226,9 +230,9 @@ class Sample
             {
                 for (int j = 10; j > 0; j--)
                 {
-                    if (i == 2 && (j == 1 || j == 2))
+                    if (i == 2 && j <3 )
                     {
-                        continue;
+                        break;
                     }
                     System.Console.Write(j + " ");
                 }
